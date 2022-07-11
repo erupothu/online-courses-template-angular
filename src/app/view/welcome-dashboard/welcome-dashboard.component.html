@@ -1,0 +1,379 @@
+<!-- <Snowf [amount]="50" [size]="5" [speed]="1.5" [wind]="0" [color]="'#fff'" [opacity]="0.8" [swing]="1" [image]="" [zIndex]=""/> -->
+
+<particles [params]="myParams" [style]="myStyle" [width]="width" [height]="height"></particles>
+
+<div fxFlex fxLayout.gt-xs="column" fxLayout="column" id="snowflakes-container">
+  <sticky>
+    <div fxLayoutAlign="center">
+      <mat-toolbar style="background-color: #be9f2f">
+        <mat-toolbar-row>
+          <span>
+            <mat-icon>home</mat-icon> Home
+          </span>
+          <button mat-button [matMenuTriggerFor]="library">Library</button>
+          <mat-menu #library>
+            <button mat-menu-item [matMenuTriggerFor]="vertebrates">Vertebrates</button>
+            <button mat-menu-item [matMenuTriggerFor]="invertebrates">Invertebrates</button>
+            <button mat-menu-item [routerLink]="['/paid-tutorials']" routerLinkActive="router-link-active" >Paid Tutorials</button>
+          </mat-menu>
+           <mat-menu #vertebrates="matMenu">
+              <button mat-menu-item [matMenuTriggerFor]="fish">Fishes</button>
+              <button mat-menu-item [matMenuTriggerFor]="amphibians">Amphibians</button>
+              <button mat-menu-item [matMenuTriggerFor]="reptiles">Reptiles</button>
+              <button mat-menu-item>Birds</button>
+              <button mat-menu-item>Mammals</button>
+            </mat-menu>
+            
+            <mat-menu #invertebrates="matMenu">
+              <button mat-menu-item>Insects</button>
+              <button mat-menu-item>Molluscs</button>
+              <button mat-menu-item>Crustaceans</button>
+              <button mat-menu-item>Corals</button>
+              <button mat-menu-item>Arachnids</button>
+              <button mat-menu-item>Velvet worms</button>
+              <button mat-menu-item>Horseshoe crabs</button>
+            </mat-menu>
+          <mat-menu #fish="matMenu">
+            <button mat-menu-item>Baikal oilfish</button>
+            <button mat-menu-item>Bala shark</button>
+            <button mat-menu-item>Ballan wrasse</button>
+            <button mat-menu-item>Bamboo shark</button>
+            <button mat-menu-item>Banded killifish</button>
+          </mat-menu>
+
+          <mat-menu #amphibians="matMenu">
+            <button mat-menu-item>Sonoran desert toad</button>
+            <button mat-menu-item>Western toad</button>
+            <button mat-menu-item>Arroyo toad</button>
+            <button mat-menu-item>Yosemite toad</button>
+          </mat-menu>
+
+          <mat-menu #reptiles="matMenu">
+            <button mat-menu-item>Banded Day Gecko</button>
+            <button mat-menu-item>Banded Gila Monster</button>
+            <button mat-menu-item>Black Tree Monitor</button>
+            <button mat-menu-item>Blue Spiny Lizard</button>
+            <button mat-menu-item disabled>Velociraptor</button>
+          </mat-menu>
+        </mat-toolbar-row>
+      </mat-toolbar>
+    </div>
+  </sticky>
+
+  <div>
+    <mat-card>
+      <div *ngFor="let image of imagesList; let i=index">
+        <div *ngIf="currentImageIndex===i">
+          <img [src]="image" height="300px" width="100%" />
+        </div>
+      </div>
+    </mat-card>
+  </div>
+
+  <div fxLayoutAlign="center">
+    <mat-horizontal-stepper>
+      <mat-step label="Development" class="mat-icon=false">
+        <div fxLayout="row">
+          <mat-card>
+            <mat-card-header>
+              Full Stack Web Development
+            </mat-card-header>
+            <mat-card-content>
+              <img [src]="sampleImage" height="300px" width="100%" />
+            </mat-card-content>
+          </mat-card>
+          <mat-card>
+            <mat-card-header>
+              Full Stack Web Development2
+            </mat-card-header>
+            <mat-card-content>
+              <img [src]="sampleImage" height="300px" width="100%" />
+            </mat-card-content>
+          </mat-card>
+          <mat-card>
+            <mat-card-header>
+              Full Stack Web Development3
+            </mat-card-header>
+            <mat-card-content>
+              <img [src]="sampleImage" height="300px" width="100%" />
+            </mat-card-content>
+          </mat-card>
+          <mat-card>
+            <mat-card-header>
+              Full Stack Web Development4
+            </mat-card-header>
+            <mat-card-content>
+              <img [src]="sampleImage" height="300px" width="100%" />
+            </mat-card-content>
+          </mat-card>
+        </div>
+      </mat-step>
+
+      <mat-step label="Database">
+        <div fxLayout="row">
+          <mat-card>
+            <mat-card-header>
+              Full Stack Web Development
+            </mat-card-header>
+            <mat-card-content>
+              <img [src]="sampleImage" height="300px" width="100%" />
+            </mat-card-content>
+          </mat-card>
+          <mat-card>
+            <mat-card-header>
+              Full Stack Web Development2
+            </mat-card-header>
+            <mat-card-content>
+              <img [src]="sampleImage" height="300px" width="100%" />
+            </mat-card-content>
+          </mat-card>
+          <mat-card>
+            <mat-card-header>
+              Full Stack Web Development3
+            </mat-card-header>
+            <mat-card-content>
+              <img [src]="sampleImage" height="300px" width="100%" />
+            </mat-card-content>
+          </mat-card>
+          <mat-card>
+            <mat-card-header>
+              Full Stack Web Development4
+            </mat-card-header>
+            <mat-card-content>
+              <img [src]="sampleImage" height="300px" width="100%" />
+            </mat-card-content>
+          </mat-card>
+        </div>
+      </mat-step>
+
+      <mat-step label="IT& Software">
+        <div fxLayout="row">
+          <mat-card>
+            <mat-card-header>
+              Full Stack Web Development
+            </mat-card-header>
+            <mat-card-content>
+              <img [src]="sampleImage" height="300px" width="100%" />
+            </mat-card-content>
+          </mat-card>
+          <mat-card>
+            <mat-card-header>
+              Full Stack Web Development2
+            </mat-card-header>
+            <mat-card-content>
+              <img [src]="sampleImage" height="300px" width="100%" />
+            </mat-card-content>
+          </mat-card>
+          <mat-card>
+            <mat-card-header>
+              Full Stack Web Development3
+            </mat-card-header>
+            <mat-card-content>
+              <img [src]="sampleImage" height="300px" width="100%" />
+            </mat-card-content>
+          </mat-card>
+          <mat-card>
+            <mat-card-header>
+              Full Stack Web Development4
+            </mat-card-header>
+            <mat-card-content>
+              <img [src]="sampleImage" height="300px" width="100%" />
+            </mat-card-content>
+          </mat-card>
+        </div>
+      </mat-step>
+
+      <mat-step label="Others">
+        <div fxLayout="row">
+          <mat-card>
+            <mat-card-header>
+              Full Stack Web Development
+            </mat-card-header>
+            <mat-card-content>
+              <img [src]="sampleImage" height="300px" width="100%" />
+            </mat-card-content>
+          </mat-card>
+          <mat-card>
+            <mat-card-header>
+              Full Stack Web Development2
+            </mat-card-header>
+            <mat-card-content>
+              <img [src]="sampleImage" height="300px" width="100%" />
+            </mat-card-content>
+          </mat-card>
+          <mat-card>
+            <mat-card-header>
+              Full Stack Web Development3
+            </mat-card-header>
+            <mat-card-content>
+              <img [src]="sampleImage" height="300px" width="100%" />
+            </mat-card-content>
+          </mat-card>
+          <mat-card>
+            <mat-card-header>
+              Full Stack Web Development4
+            </mat-card-header>
+            <mat-card-content>
+              <img [src]="sampleImage" height="300px" width="100%" />
+            </mat-card-content>
+          </mat-card>
+        </div>
+      </mat-step>
+    </mat-horizontal-stepper>
+  </div>
+
+  <div fxLayoutAlign="center">
+    <mat-horizontal-stepper>
+      <ng-template matStepperIcon="edit"></ng-template>
+      <mat-step label="Development">
+        <div fxLayout="row">
+          <mat-card>
+            <mat-card-header>
+              Full Stack Web Development
+            </mat-card-header>
+            <mat-card-content>
+              <img [src]="sampleImage" height="300px" width="100%" />
+            </mat-card-content>
+          </mat-card>
+          <mat-card>
+            <mat-card-header>
+              Full Stack Web Development2
+            </mat-card-header>
+            <mat-card-content>
+              <img [src]="sampleImage" height="300px" width="100%" />
+            </mat-card-content>
+          </mat-card>
+          <mat-card>
+            <mat-card-header>
+              Full Stack Web Development3
+            </mat-card-header>
+            <mat-card-content>
+              <img [src]="sampleImage" height="300px" width="100%" />
+            </mat-card-content>
+          </mat-card>
+          <mat-card>
+            <mat-card-header>
+              Full Stack Web Development4
+            </mat-card-header>
+            <mat-card-content>
+              <img [src]="sampleImage" height="300px" width="100%" />
+            </mat-card-content>
+          </mat-card>
+        </div>
+      </mat-step>
+
+      <mat-step label="Database">
+        <div fxLayout="row">
+          <mat-card>
+            <mat-card-header>
+              Full Stack Web Development
+            </mat-card-header>
+            <mat-card-content>
+              <img [src]="sampleImage" height="300px" width="100%" />
+            </mat-card-content>
+          </mat-card>
+          <mat-card>
+            <mat-card-header>
+              Full Stack Web Development2
+            </mat-card-header>
+            <mat-card-content>
+              <img [src]="sampleImage" height="300px" width="100%" />
+            </mat-card-content>
+          </mat-card>
+          <mat-card>
+            <mat-card-header>
+              Full Stack Web Development3
+            </mat-card-header>
+            <mat-card-content>
+              <img [src]="sampleImage" height="300px" width="100%" />
+            </mat-card-content>
+          </mat-card>
+          <mat-card>
+            <mat-card-header>
+              Full Stack Web Development4
+            </mat-card-header>
+            <mat-card-content>
+              <img [src]="sampleImage" height="300px" width="100%" />
+            </mat-card-content>
+          </mat-card>
+        </div>
+      </mat-step>
+
+      <mat-step label="IT& Software">
+        <div fxLayout="row">
+          <mat-card>
+            <mat-card-header>
+              Full Stack Web Development
+            </mat-card-header>
+            <mat-card-content>
+              <img [src]="sampleImage" height="300px" width="100%" />
+            </mat-card-content>
+          </mat-card>
+          <mat-card>
+            <mat-card-header>
+              Full Stack Web Development2
+            </mat-card-header>
+            <mat-card-content>
+              <img [src]="sampleImage" height="300px" width="100%" />
+            </mat-card-content>
+          </mat-card>
+          <mat-card>
+            <mat-card-header>
+              Full Stack Web Development3
+            </mat-card-header>
+            <mat-card-content>
+              <img [src]="sampleImage" height="300px" width="100%" />
+            </mat-card-content>
+          </mat-card>
+          <mat-card>
+            <mat-card-header>
+              Full Stack Web Development4
+            </mat-card-header>
+            <mat-card-content>
+              <img [src]="sampleImage" height="300px" width="100%" />
+            </mat-card-content>
+          </mat-card>
+        </div>
+      </mat-step>
+
+      <mat-step label="Others">
+        <div fxLayout="row">
+          <mat-card>
+            <mat-card-header>
+              Full Stack Web Development
+            </mat-card-header>
+            <mat-card-content>
+              <img [src]="sampleImage" height="300px" width="100%" />
+            </mat-card-content>
+          </mat-card>
+          <mat-card>
+            <mat-card-header>
+              Full Stack Web Development2
+            </mat-card-header>
+            <mat-card-content>
+              <img [src]="sampleImage" height="300px" width="100%" />
+            </mat-card-content>
+          </mat-card>
+          <mat-card>
+            <mat-card-header>
+              Full Stack Web Development3
+            </mat-card-header>
+            <mat-card-content>
+              <img [src]="sampleImage" height="300px" width="100%" />
+            </mat-card-content>
+          </mat-card>
+          <mat-card>
+            <mat-card-header>
+              Full Stack Web Development4
+            </mat-card-header>
+            <mat-card-content>
+              <img [src]="sampleImage" height="300px" width="100%" />
+            </mat-card-content>
+          </mat-card>
+        </div>
+      </mat-step>
+    </mat-horizontal-stepper>
+  </div>
+
+<router-outlet></router-outlet>
+</div>

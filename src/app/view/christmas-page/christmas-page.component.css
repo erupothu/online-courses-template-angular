@@ -1,0 +1,15 @@
+.text-style {
+	text-align: center;
+	font-size: 50px;
+	background: linear-gradient(to right, #d03055 0%, #082c67 100%);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif
+}
+
+.background-image-style {
+	background-image: url("../../../assets/images-jpg/christmas-image1.jpg");
+	background-size: cover;
+	height: 100%;
+	object-fit: cover;
+}
